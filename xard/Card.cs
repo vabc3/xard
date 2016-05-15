@@ -1,14 +1,27 @@
-﻿namespace xard
+﻿using System.Collections.Generic;
+using System.Text;
+
+namespace xard
 {
     public class Card
     {
-        public Card(CardRank rank, CardSuit suit)
+        public CardSuit Suit => this.type.Suit;
+
+        public CardRank Rand => this.type.Rank;
+
+        private CardType type;
+
+        public IDictionary<string, int> Bag { get; } = new Dictionary<string, int>();
+
+        public Card(CardType type)
         {
-            this.Rank = rank;
-            this.Suit = suit;
+            this.type = type;
         }
 
-        public CardRank Rank { get; }
-        public CardSuit Suit { get; }
+        public override string ToString()
+        {
+            return char.ConvertFromUtf32(0x1F0A1);
+            //return "\u01F0A1";
+        }
     }
 }

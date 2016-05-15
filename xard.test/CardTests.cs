@@ -6,11 +6,19 @@ namespace xard.test
     public class CardTests
     {
         [TestMethod]
-        public void TestCard()
+        public void TestCardType()
         {
-            Card a = new Card(CardRank.R_3, CardSuit.Hearts);
+            CardType a = new CardType(CardRank.R_3, CardSuit.Hearts);
             Assert.AreEqual(CardRank.R_3, a.Rank);
             Assert.AreEqual(CardSuit.Hearts, a.Suit);
+        }
+
+        [TestMethod]
+        public void TestCardStr()
+        {
+            CardType a = new CardType(CardRank.R_3, CardSuit.Hearts);
+            var b = new Card(a);
+            Assert.AreEqual("🂡", b.ToString());
         }
     }
 }
