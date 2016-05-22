@@ -1,21 +1,33 @@
-﻿using System.Collections.Generic;
-
-namespace xard
+﻿namespace xard
 {
     public class CardPool
     {
-        public int Count { get; private set; } = 0;
+        public CardCombo Pool { get; set; }
 
-        private List<ExtendedCard> cards = new List<ExtendedCard>();
-
-        internal void AddCard(Card card)
+        public CardPool()
         {
-            this.Count++;
-            //cards.Add();
+            this.Pool = CardCombo.GetDeck();
+            /*
+            for (var i = 0; i < this.Pool.Count; i++)
+            {
+                this.Pool.Cards[i].SetPoolId(i);
+            }
+            */
         }
 
-        public void set()
+        public void Shuffle()
         {
+
         }
     }
+
+    /*
+    public static class CardPoolExtension
+    {
+        public static void SetPoolId(this Card card, int id)
+        {
+            card.Bag.Add("poolId", id);
+        }
+    }
+    */
 }

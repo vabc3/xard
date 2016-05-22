@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace xard
 {
@@ -16,6 +17,8 @@ namespace xard
         }
 
         public int Count => cards.Count;
+
+        public ReadOnlyCollection<Card> Cards => cards.AsReadOnly();
 
         private List<Card> cards = new List<Card>();
 
