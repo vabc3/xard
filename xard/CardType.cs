@@ -30,5 +30,52 @@ namespace xard
 
         public CardSuit Suit { get; }
         public CardRank Rank { get; }
+
+        public override string ToString()
+        {
+            int index = 0x1F000;
+            switch (this.Suit)
+            {
+                case CardSuit.Pikes:
+                    index += 0xA0;
+                    break;
+                case CardSuit.Hearts:
+                    index += 0xB0;
+                    break;
+                case CardSuit.Clovers:
+                    index += 0xD0;
+                    break;
+                case CardSuit.Tiles:
+                    index += 0xC0;
+                    break;
+                default:
+                    throw new InvalidOperationException();
+            }
+
+            switch (this.Rank)
+            {
+                case CardRank.R_A:
+                case CardRank.R_2:
+                case CardRank.R_3:
+                case CardRank.R_4:
+                case CardRank.R_5:
+                case CardRank.R_6:
+                case CardRank.R_7:
+                case CardRank.R_8:
+                case CardRank.R_9:
+                case CardRank.R_10:
+                case CardRank.R_J:
+                    index += (int)this.Rank + 1;
+                    break;
+                case CardRank.R_Q:
+                case CardRank.R_K:
+                    index += (int)this.Rank + 2;
+                    break;
+                default:
+                    throw new InvalidOperationException();
+            }
+
+            return char.ConvertFromUtf32(index);
+        }
     }
 }

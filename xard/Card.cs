@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace xard
@@ -7,7 +8,7 @@ namespace xard
     {
         public CardSuit Suit => this.type.Suit;
 
-        public CardRank Rand => this.type.Rank;
+        public CardRank Rank => this.type.Rank;
 
         private CardType type;
 
@@ -18,10 +19,6 @@ namespace xard
             this.type = type;
         }
 
-        public override string ToString()
-        {
-            return char.ConvertFromUtf32(0x1F0A1);
-            //return "\u01F0A1";
-        }
+        
     }
 }
