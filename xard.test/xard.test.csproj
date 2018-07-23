@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="CardComboTest.cs" />
     <Compile Include="CardPoolTest.cs" />
-    <Compile Include="CardTests.cs" />
+    <Compile Include="CardType.cs" />
     <Compile Include="CardTypeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

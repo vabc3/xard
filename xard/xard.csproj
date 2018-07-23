@@ -35,7 +35,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
     <Compile Include="CardCombo.cs" />
     <Compile Include="CardPool.cs" />
     <Compile Include="CardType.cs" />

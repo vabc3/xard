@@ -8,9 +8,9 @@ namespace xard
         public static CardCombo GetDeck()
         {
             var deck = new CardCombo();
-            foreach (var cardType in CardType.All)
+            foreach (var cardType in NumbericCardType.All)
             {
-                deck.AddCard(new Card(cardType));
+                deck.AddCard(cardType);
             }
 
             return deck;
@@ -18,11 +18,11 @@ namespace xard
 
         public int Count => cards.Count;
 
-        public ReadOnlyCollection<Card> Cards => cards.AsReadOnly();
+        public ReadOnlyCollection<NumbericCardType> Cards => cards.AsReadOnly();
 
-        private List<Card> cards = new List<Card>();
+        private List<NumbericCardType> cards = new List<NumbericCardType>();
 
-        internal void AddCard(Card card)
+        internal void AddCard(NumbericCardType card)
         {
             cards.Add(card);
         }

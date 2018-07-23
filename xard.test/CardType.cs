@@ -21,7 +21,7 @@ namespace xard
 
         public override string ToCardString()
         {
-            int index = 0x1F000 + 0xC0 ;
+            int index = 0x1F000 + 0xC0 + 15 + (Big ? 0x10 : 0);
             return char.ConvertFromUtf32(index);
         }
     }
