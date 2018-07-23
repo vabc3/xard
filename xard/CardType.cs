@@ -13,15 +13,17 @@ namespace xard
 
     public sealed class JokerCardType : CardType
     {
-        public bool Big { get; private set; }
-        public JokerCardType(bool big)
+        public static CardType Big = new JokerCardType(true);
+        public static CardType Small = new JokerCardType(false);
+        public bool big { get; private set; }
+        private JokerCardType(bool big)
         {
-            this.Big = big;
+            this.big = big;
         }
 
         public override string ToCardString()
         {
-            int index = 0x1F000 + 0xC0 ;
+            int index = 0x1F000 + 0xC0 + 15 + (big ? 0x10 : 0);
             return char.ConvertFromUtf32(index);
         }
     }

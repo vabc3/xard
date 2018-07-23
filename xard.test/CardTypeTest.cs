@@ -21,8 +21,8 @@ namespace xard.test
             Assert.AreEqual("🃚", new NumbericCardType(CardSuit.Clovers, CardRank.R_10).ToCardString());
             Assert.AreEqual("🃍", new NumbericCardType(CardSuit.Tiles, CardRank.R_Q).ToCardString());
 
-            Assert.AreEqual("🃏", new JokerCardType(false).ToCardString());
-            Assert.AreEqual("🃟", new JokerCardType(true).ToCardString());
+            Assert.AreEqual("🃏", JokerCardType.Small.ToCardString());
+            Assert.AreEqual("🃟", JokerCardType.Big.ToCardString());
         }
     }
 }
